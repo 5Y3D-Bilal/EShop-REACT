@@ -1,27 +1,17 @@
-// import React, { useRef } from 'react';
+import React, { useState } from 'react';
 
-function CopyInputToClipboard() {
-    const inputRef = useRef(null);
-  
-    const handleCopyClick = () => {
-      if (inputRef.current) {
-        inputRef.current.select();
-        document.execCommand('copy');
-        alert('Text copied to clipboard!');
-      }
-    };
-  
-    return (
-      <div>
-        <input
-          type="text"
-          ref={inputRef}
-          placeholder="Type something..."
-        />
-        <button onClick={handleCopyClick}>Copy to Clipboard</button>
-      </div>
-    );
-  }
-  
-  export default CopyInputToClipboard;
-  
+function Example() {
+  // Declare a new state variable, which we'll call "count"
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
+
+export default Example;
